@@ -5,7 +5,7 @@ async function summarizeText() {
   output.innerText = "Loading... ⏳";
 
   try {
-    let response = await fetch("http://localhost:3000/summarize", {
+    let response = await fetch("https://ai-summarizer-backend-0va4.onrender.com/summarize", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
