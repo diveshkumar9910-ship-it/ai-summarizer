@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Summarizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+  <h1>🤖 AI Summarizer</h1>
+
+  <textarea id="inputText" placeholder="Enter text..."></textarea>
+  <p id="count">0 characters</p>
+
+  <button onclick="summarizeText()">✨ Summarize</button>
+
+  <div id="loader" class="loader" style="display:none;"></div>
+
+  <div class="output">
+    <h3>Summary:</h3>
+    <p id="outputText"></p>
+    <button onclick="copyText()">📋 Copy</button>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
