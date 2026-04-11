@@ -2,7 +2,13 @@ async function summarizeText() {
   let text = document.getElementById("inputText").value;
   let output = document.getElementById("outputText");
 
-  output.innerText = "Loading... ⏳";
+  if (!text.trim()) {
+  alert("Please enter text!");
+  return;
+}
+
+  document.getElementById("loader").style.display = "block";
+output.innerText = "";
 
   try {
     let response = await fetch("https://ai-summarizer-backend-0va4.onrender.com/summarize", {
@@ -16,6 +22,8 @@ async function summarizeText() {
     });
 
     let data = await response.json();
+
+        document.getElementById("loader").style.display = "none";
 
     if (data.choices && data.choices.length > 0) {
       output.innerText = data.choices[0].message.content;
@@ -42,4 +50,9 @@ function copyText() {
   let text = document.getElementById("outputText").innerText;
   navigator.clipboard.writeText(text);
   alert("Copied!");
+}
+function clearText() {
+  document.getElementById("inputText").value = "";
+  document.getElementById("outputText").innerText = "";
+  document.getElementById("count").innerText = "0 characters";
 }
