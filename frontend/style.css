@@ -90,3 +90,69 @@ button:hover {
     height: 100px;
   }
 }
+/* Dark mode */
+.dark {
+  background: #121212;
+}
+
+.dark .card {
+  background: rgba(0,0,0,0.6);
+}
+.dark .card {
+  box-shadow: 0 0 20px rgba(255,255,255,0.1);
+}
+.dark textarea,
+.dark #outputText {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+/* Toggle container */
+.theme-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Hide checkbox */
+.theme-switch input {
+  display: none;
+}
+
+/* Slider */
+.slider {
+  width: 60px;
+  height: 30px;
+  background: #ccc;
+  border-radius: 30px;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Circle */
+.slider::before {
+  content: "🌙";
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  background: white;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+/* Active (Dark Mode) */
+input:checked + .slider {
+  background: #333;
+}
+
+input:checked + .slider::before {
+  transform: translateX(30px);
+  content: "☀️";
+}
