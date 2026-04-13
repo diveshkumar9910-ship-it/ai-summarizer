@@ -56,3 +56,16 @@ function clearText() {
   document.getElementById("outputText").innerText = "";
   document.getElementById("count").innerText = "0 characters";
 }
+
+const toggle = document.getElementById("toggleDark");
+
+// Auto detect system theme (first time)
+if (!localStorage.getItem("theme")) {
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    document.body.classList.add("dark");
+    toggle.checked = true;
+  }
+}
+toggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});
