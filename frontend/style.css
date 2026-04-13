@@ -85,7 +85,10 @@ button:hover {
 @keyframes spin {
   100% { transform: rotate(360deg); }
 }
-
+@keyframes gradientMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
 /* Mobile responsiveness */
 @media (max-width: 500px) {
   .card {
@@ -96,6 +99,7 @@ button:hover {
     height: 100px;
   }
 }
+
 /* Dark mode */
 .dark {
   background: #121212;
@@ -103,8 +107,6 @@ button:hover {
 
 .dark .card {
   background: rgba(0,0,0,0.6);
-}
-.dark .card {
   box-shadow: 0 0 20px rgba(255,255,255,0.1);
 }
 .dark textarea,
