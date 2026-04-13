@@ -8,6 +8,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+/* Smooth transition for whole UI */
+body, .card, textarea, #outputText {
+  transition: all 0.4s ease-in-out;
+}
 
 .card {
   width: 90%;
